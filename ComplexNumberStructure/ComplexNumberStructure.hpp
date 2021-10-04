@@ -1,82 +1,37 @@
-#include <iostream>
-#include <cmath>
-#include <cassert>
-
-#define _USE_MATH_DEFINES
+#ifndef COMPLEXNUMBERSTRUCTURE_HPP_INCLUDED
+#define COMPLEXNUMBERSTRUCTURE_HPP_INCLUDED
 
 struct ComplexNumber {
-    double real_part_;
-    double imaginary_part_;
+    double real_part;
+    double imaginary_part;
+
+    ~ComplexNumber();
 
     ComplexNumber();
-    ComplexNumber(double real_part, double imaginary_part);
+    ComplexNumber(double real_part_new, double imaginary_part_new);
     ComplexNumber(const ComplexNumber& another);
 
     ComplexNumber operator+ (const ComplexNumber &other) const;
     ComplexNumber operator- (const ComplexNumber &other) const;
     ComplexNumber operator* (const ComplexNumber &other) const;
     ComplexNumber operator/ (const ComplexNumber &other) const;
-    ComplexNumber operator= (const ComplexNumber &other);
-    ComplexNumber operator+= (const ComplexNumber &other);
-    ComplexNumber operator-= (const ComplexNumber &other);
-    bool operator== (const ComplexNumber &other);
+    ComplexNumber& operator+= (const ComplexNumber &other);
+    ComplexNumber& operator-= (const ComplexNumber &other);
+    ComplexNumber& operator*= (const ComplexNumber &other);
+    ComplexNumber& operator/= (const ComplexNumber &other);
+    ComplexNumber& operator= (const ComplexNumber &other);
+    bool operator== (const ComplexNumber &other) const;
 
-    ComplexNumber operator+ (const double &other) const;
-    ComplexNumber operator- (const double &other) const;
-    ComplexNumber operator* (const double &other) const;
-    ComplexNumber operator/ (const double &other) const;
-    ComplexNumber operator= (const double &other);
-    ComplexNumber operator+= (const double &other);
-    ComplexNumber operator-= (const double &other);
-    bool operator== (const double &other);
+    ComplexNumber operator* (double &other) const;
+    ComplexNumber operator/ (double &other) const;
+    ComplexNumber& operator*= (double &other);
+    ComplexNumber& operator/= (double &other);
 
-    //double operator+ (const ComplexNumber &other) const;
+    ComplexNumber& operator- () const;
 
     void print() const;
     double abs() const;
     double argument() const;
 };
 
-void TestDefaultConstructor();
-
-void TestConstructor();
-
-void TestCopyConstructor();
-
-void TestOperatorPlus();
-
-void TestOperatorMinus();
-
-void TestOperatorStar();
-
-void TestOperatorSlash();
-
-void TestOperatorEqual();
-
-void TestOperatorIncrease();
-
-void TestOperatorDecrease();
-
-void TestOperatorCheckEqual();
-
-void TestOperatorPlusDouble();
-
-void TestOperatorMinusDouble();
-
-void TestOperatorStarDouble();
-
-void TestOperatorSlashDouble();
-
-void TestOperatorEqualDouble();
-
-void TestOperatorIncreaseDouble();
-
-void TestOperatorDecreaseDouble();
-
-void TestOperatorCheckEqualDouble();
-
-void TestAbs();
-
-void TestArgument();
-
-//void TestOperatorPlusDoubleReversed();
+#endif // COMPLEXNUMBERSTRUCTURE_HPP_INCLUDED
