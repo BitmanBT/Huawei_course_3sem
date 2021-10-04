@@ -105,7 +105,7 @@ bool ComplexNumber::operator== (const ComplexNumber &other) const {
     }
 }
 
-ComplexNumber ComplexNumber::operator* (double &other) const {
+ComplexNumber ComplexNumber::operator* (double other) const {
     ComplexNumber z;
 
     z.real_part = real_part * other;
@@ -114,7 +114,7 @@ ComplexNumber ComplexNumber::operator* (double &other) const {
     return z;
 }
 
-ComplexNumber ComplexNumber::operator/ (double &other) const {
+ComplexNumber ComplexNumber::operator/ (double other) const {
     ComplexNumber z;
 
     assert(other != 0);
@@ -125,25 +125,27 @@ ComplexNumber ComplexNumber::operator/ (double &other) const {
     return z;
 }
 
-ComplexNumber& ComplexNumber::operator*= (double &other) {
+ComplexNumber& ComplexNumber::operator*= (double other) {
     real_part *= other;
     imaginary_part *= other;
 
     return *this;
 }
 
-ComplexNumber& ComplexNumber::operator/= (double &other) {
+ComplexNumber& ComplexNumber::operator/= (double other) {
     real_part /= other;
     imaginary_part /= other;
 
     return *this;
 }
 
-ComplexNumber& ComplexNumber::operator- () const {
-    real_part *= (-1);
-    imaginary_part *= (-1);
+ComplexNumber ComplexNumber::operator- () const {
+    ComplexNumber z;
 
-    return *this;
+    z.real_part = real_part * (-1);
+    z.imaginary_part = imaginary_part * (-1);
+
+    return z;
 }
 
 void ComplexNumber::print() const {

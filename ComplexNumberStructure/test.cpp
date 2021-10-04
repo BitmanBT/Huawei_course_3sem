@@ -1,7 +1,6 @@
 #include "ComplexNumberStructure.hpp"
 #include <iostream>
 #include <cmath>
-#include <cassert>
 
 #define _USE_MATH_DEFINES
 

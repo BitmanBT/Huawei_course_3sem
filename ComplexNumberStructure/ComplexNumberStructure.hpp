@@ -22,12 +22,12 @@ struct ComplexNumber {
     ComplexNumber& operator= (const ComplexNumber &other);
     bool operator== (const ComplexNumber &other) const;
 
-    ComplexNumber operator* (double &other) const;
-    ComplexNumber operator/ (double &other) const;
-    ComplexNumber& operator*= (double &other);
-    ComplexNumber& operator/= (double &other);
+    ComplexNumber operator* (double other) const;
+    ComplexNumber operator/ (double other) const;
+    ComplexNumber& operator*= (double other);
+    ComplexNumber& operator/= (double other);
 
-    ComplexNumber& operator- () const;
+    ComplexNumber operator- () const;
 
     void print() const;
     double abs() const;
