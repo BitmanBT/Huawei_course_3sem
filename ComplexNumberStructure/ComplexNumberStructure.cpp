@@ -90,7 +90,7 @@ ComplexNumber& ComplexNumber::operator*= (const ComplexNumber &other) {
 
 ComplexNumber& ComplexNumber::operator/= (const ComplexNumber &other) {
     double copy_real = real_part;
-    double denominator = (other.real_part)^2 + (other.imaginary_part)^2;
+    double denominator = other.real_part * other.real_part + other.imaginary_part * other.imaginary_part;
     real_part = (real_part * other.real_part + imaginary_part * other.imaginary_part) / denominator;
     imaginary_part = (imaginary_part * other.real_part - copy_real * other.imaginary_part) / denominator;
 
@@ -169,4 +169,6 @@ double ComplexNumber::argument() const {
     } else {
         argument = -M_PI + atan(imaginary_part/real_part);
     }
+
+    return argument;
 }
