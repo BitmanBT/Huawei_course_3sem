@@ -1,6 +1,6 @@
 #include "ComplexNumberStructure.hpp"
 #include <iostream>
-#include "test.cpp"
+#include "test.hpp"
 
 int main() {
     TestDefaultConstructor();
