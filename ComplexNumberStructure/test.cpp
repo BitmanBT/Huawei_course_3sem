@@ -1,48 +1,9 @@
 #include "ComplexNumberStructure.hpp"
+#include "test.hpp"
 #include <iostream>
 #include <cmath>
 
 #define _USE_MATH_DEFINES
-
-void TestDefaultConstructor();
-
-void TestConstructor();
-
-void TestCopyConstructor();
-
-void TestOperatorPlus();
-
-void TestOperatorMinus();
-
-void TestOperatorStar();
-
-void TestOperatorSlash();
-
-void TestOperatorEqual();
-
-void TestOperatorIncrease();
-
-void TestOperatorDecrease();
-
-void TestOperatorStarIncrease();
-
-void TestOperatorSlashDecrease();
-
-void TestOperatorCheckEqual();
-
-void TestOperatorStarDouble();
-
-void TestOperatorSlashDouble();
-
-void TestOperatorStarIncreaseDouble();
-
-void TestOperatorSlashDecreaseDouble();
-
-void TestOperatorBeginningMinus();
-
-void TestAbs();
-
-void TestArgument();
 
 void TestDefaultConstructor() {
     ComplexNumber z;
